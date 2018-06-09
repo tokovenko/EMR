@@ -1,0 +1,293 @@
+.DatetimePicker {
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__calendar-container {
+    width: 260px;
+    display: inline-block;
+    position: absolute;
+    z-index: 1001;
+    left: 0;
+    top: calc(100% + 2px);
+    color: #444;
+    background: #FFFFFF;
+    border: 1px solid #C5C5C5;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.20);
+    border-radius: 3px;
+    font-size: 14px;
+
+    &.hidden {
+      display: none;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: #FFFFFF;
+      border: 1px solid #C5C5C5;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.20);
+      border-radius: 3px;
+      top: -6px;
+      transform: rotate(45deg);
+      left: 12px;
+      z-index: -1;
+    }
+
+    &.top {
+      bottom: calc(100% + 2px);
+      top: auto;
+      box-shadow: 0 -4px 8px 0 rgba(0,0,0,0.20);
+
+      &:before {
+        bottom: -6px;
+        top: auto;
+        box-shadow: 0 -4px 8px 0 rgba(0,0,0,0.20);
+      }
+    }
+  }
+
+  &__time-picker{
+    background: #FFFFFF;
+    position: relative;
+  }
+
+  &__ports {
+    padding-bottom: 10px;
+  }
+
+  &__port,
+  &__days {
+    display: inline-block;
+    width: 34px;
+    height: 31px;
+    line-height: 32px;
+    padding: 3px;
+    margin: 1px;
+    text-align: center;
+    vertical-align: top;
+  }
+
+  &__port {
+    font-size: 14px;
+    color: #212121;
+    border-radius: 3px;
+    position: relative;
+
+    &.inScope:hover{
+      background: #EEEEEE;
+      cursor: pointer;
+    }
+
+    &:before {
+      content: '';
+      display: inline-block;
+      border: solid transparent;
+      border-width: 0 0 7px 7px;
+      border-bottom-color: transparent;
+      position: absolute;
+      bottom: 4px;
+      right: 4px;
+    }
+  }
+
+  &__port.activePort,
+  &__port.activePort:hover {
+    background-color: #50E3C2;
+    color: #FFFFFF;
+  }
+
+  &__days{
+    font-size: 12px;
+    color: #212121;
+    font-weight: bold;
+  }
+
+  &__nav-l:hover,
+  &__nav-r:hover {
+    background-color: #EEEEEE;
+  }
+
+  &__nav-l,
+  &__nav-r {
+    font-size: 16px;
+    color: #212121;
+    background: #FFFFFF;
+    border: none;
+    height: 32px;
+    width: 32px;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
+  }
+
+  &__month-setter {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__month {
+    font-size: 14px;
+    font-weight: bold;
+    color: #212121;
+    letter-spacing: .5px;
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  &__hour-selector,
+  &__minute-selector{
+    width: 30px;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__time-separator{
+    display: inline-block;
+    font-weight: bold;
+  }
+
+  &__calendar-picker {
+    padding-bottom: 10px;
+    background: #FFFFFF;
+  }
+
+  &__time-picker{
+    padding: 10px;
+    width: 100%;
+  }
+
+  &__nav-t, &__nav-d{
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  &__scroll-hider {
+    display: none;
+    vertical-align:top;
+    overflow:hidden;
+    border:0;
+    position: absolute;
+    top: -40px;
+    left: 0;
+    box-shadow: 0 0 3px #333;
+    background-color: white;
+
+    &.showSelector{
+      display:inline-block;
+    }
+  }
+
+  &__scroll-hider-list {
+    padding:5px;
+    margin:-5px -13px -5px -5px;
+    list-style-type: none;
+    height: 100px;
+    overflow: auto;
+    width:55px;
+    color: #999;
+    overflow-x: hidden;
+  }
+
+  &__scroll-hider-element {
+    padding: 4px;
+    font-size: 16px;
+    width: 100%;
+    cursor: pointer;
+
+    &.active{
+      background-color: #ed4d00;
+      color: white;
+    }
+  }
+
+  &__time-picker{
+    display: inline-block;
+  }
+
+  &__calendar-container,
+  &__calendar-picker,
+  &__time-picker {
+    &.hidden { display: none; }
+  }
+
+  &__clear--grey, &__clear, &__submit {
+    color: #3CE4C1;
+    border-radius: 3px;
+    margin: 0 16px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &--grey {
+      background: #9B9B9B;;
+    }
+  }
+
+  &__clear-text {
+    font-style: normal;
+  }
+
+  &__calendar-picker.current-period &__port:not(.activePort).currentDay:before {
+    border-bottom-color: #3CE4C1;
+  }
+
+  &__calendar-picker.current-period &__port.activePort.currentDay:before {
+    border-bottom-color: #FFFFFF;
+  }
+
+  &__time-picker-inner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px 0;
+  }
+
+  &__period-switcher {
+    width: 34px;
+    height: 31px;
+    background: #3CE4C1;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFFFFF;
+    letter-spacing: .5px;
+    cursor: pointer;
+  }
+
+  &__hour-selector-icon {
+    color: #3CE4C1;
+    cursor: pointer;
+    font-size: 16px;
+
+    &.increase {
+      margin-bottom: 56px
+    }
+
+    &.decrease {
+      margin-top: 56px;
+    }
+  }
+
+  &__minute-selector-value,
+  &__hour-selector-value {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,74 @@
+@import "./src/stylesheets/breakpoints";
+
+.TheSidebar {
+  &__wrapper {
+    position: fixed;
+    top: 75px;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;
+    width: 429px;
+    padding: 12px 43px;
+    display: flex;
+    flex-direction: column;
+    background-color: #F3F3F3;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.50);
+    min-height: 100vh;
+    overflow-y: scroll;
+    transform: translateX(110%);
+    transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+    &.opened {
+      transform: translateX(0);
+    }
+  }
+
+  &__profile {
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+
+    &-image {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background-position: center;
+      background-size: cover;
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      padding: 0 22px;
+    }
+
+    &-username {
+      font-size: 24px;
+      color: #333;
+    }
+
+    &-name {
+      font-size: 16px;
+      color: #333;
+      padding-top: 6px;
+    }
+  }
+
+  &__items {
+    padding: 12px 0;
+  }
+
+  &__item {
+    color: #212121;
+    padding: 8px 0;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+
+    &-icon {
+      font-size: 25px;
+      margin-right: 47px;
+    }
+  }
+}

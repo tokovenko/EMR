@@ -1,0 +1,120 @@
+html, body {
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+*, :after, :before, html {
+  box-sizing: border-box;
+}
+
+.content {
+  padding-top: 80px;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 100vh;
+  box-sizing: border-box;
+  position: relative;
+
+  @media (min-width: $bp-xs-min) {max-width: 80%;}
+  @media (min-width: $bp-sm-min) {max-width: 750px;}
+  @media (min-width: $bp-xmd-min) {max-width: 970px;}
+  @media (min-width: $bp-lg-min) {max-width: 1190px;}
+}
+
+.content-inner {
+  width: 100%;
+  min-height: calc(100% - 80px);
+  padding: 18px 0 54px 0;
+}
+
+.ripple {
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #50E3C2 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10,10);
+    opacity: 0;
+    transition: transform .5s, opacity .6s;
+  }
+
+  &:active:after {
+    transform: scale(0,0);
+    opacity: .2;
+    transition: 0s;
+  }
+}
+
+.invalidate {
+  pointer-events: none;
+  opacity: .6;
+}
+
+.custom-scrollbar-container {
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 8px;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #50E3C2;
+    border-radius: 2px;
+  }
+}
+
+// gmap-autocomplete dropdown
+.pac-container {z-index: 1001;}
+
+// modal styles
+[id^="#modals-container"] {
+  .v--modal-overlay {
+    background: rgba(0, 0, 0, .71);
+    z-index: 1100;
+  }
+
+  .v--modal-overlay .v--modal {
+    background: #292929;
+    border: 1px solid #4A4A4A;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.19), inset 0 1px 3px 0 rgba(0,0,0,0.14);
+    border-radius: 6px;
+  }
+
+  .v--modal-overlay .v--modal-box {
+    overflow: visible;
+  }
+}
+
+.__cov-progress {
+  top: 80px !important;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+  &:after {
+    content: '';
+    width: 26px;
+    height: 26px;
+    background-image: url(/static/driver_has-load.png);
+    background-size: cover;
+    position: absolute;
+    right: -13px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

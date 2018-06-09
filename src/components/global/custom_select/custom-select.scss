@@ -1,0 +1,116 @@
+.CustomSelect {
+  &__wrapper {
+    position: relative;
+  }
+
+  &__presentation {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 16px;
+    color: #4A4A4A;
+    font-size: 13px;
+    cursor: pointer;
+
+    &:before {
+      transition: transform .2s cubic-bezier(1, -.115, .975, .855);
+      transform: rotate(0deg);
+    }
+    &.open:before {
+      transform: rotate(90deg);
+    }
+  }
+
+  &__inner {
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: inherit;
+  }
+
+  &__close,
+  &__open {
+    height: 100%;
+  }
+
+  &__input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: inherit;
+    font-size: inherit;
+    padding: 0;
+
+    &::placeholder {
+      color: #858585;
+      font-size: 16px;
+    }
+  }
+
+  &__selected {
+    color: #000000;
+  }
+
+  &__placeholder {
+    height: inherit;
+    color: #858585;
+    font-size: inherit;
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+
+  &__dropdown {
+    background: #FFFFFF;
+    border: 1px solid #C5C5C5;
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    position: absolute;
+    z-index: 1101;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: 250px;
+    overflow: auto;
+  }
+
+  &__option {
+    padding: 18px 14px;
+    font-size: 14px;
+    color: #000000;
+    background: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+    transition: background .3s ease;
+    cursor: pointer;
+    user-select: none;
+
+    &.selected,
+    &:hover {
+      background: #D8D6D6;
+    }
+  }
+
+  &__no-results {
+    padding: 18px 14px;
+    font-size: 14px;
+    text-align: center;
+    color: #D8D6D6;
+    background: #FFFFFF;
+    pointer-events: none;
+  }
+
+  &__backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
