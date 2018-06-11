@@ -1,0 +1,18 @@
+.FormBuilderNewFormDropArea{
+  &__wrapper {
+    border: 1px dashed;
+    padding: 40px;
+    text-align: center;
+    margin-top: 20px;
+    &.drag-over {
+      border: 1px solid green;
+      &>* {
+        pointer-events: none;
+      }
+    }
+    &.disabled {
+      pointer-events: none;
+      opacity: 0.6;
+    }
+  }
+}

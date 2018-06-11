@@ -3,18 +3,13 @@ import api from '@/api';
 
 const state = {
   forms: [
-    { name: 'form 1'},
-    { name: 'form 2'}
-  ],
-  blocks: [
-    { type: 'input', id: 0},
-    { type: 'checkbox', id: 1}
+    { name: 'form 1', fields: []},
+    { name: 'form 2', fields: []}
   ]
 };
 
 const getters = {
-  forms: state => state.forms,
-  blocks: blocks => state.blocks
+  forms: state => state.forms
 };
 
 const actions = {
