@@ -1,4 +1,3 @@
-
 export const scrollDown = (el, duration) => {
   const diff = el.scrollHeight - el.scrollTop;
   const scrollStep = duration ? (diff / (duration / 15)) : diff;

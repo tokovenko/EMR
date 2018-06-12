@@ -2,10 +2,7 @@ import Vue from 'vue';
 import api from '@/api';
 
 const state = {
-  forms: [
-    { name: 'form 1', fields: []},
-    { name: 'form 2', fields: []}
-  ]
+  forms: []
 };
 
 const getters = {
@@ -15,13 +12,17 @@ const getters = {
 const actions = {
   async fetchForms({ commit }) {
     const response = await api.fetchForms();
-    commit('setForms', response.forms);
+    commit('setForms', response);
   }
 };
 
 const mutations = {
   setForms(state, forms) {
     state.forms = forms;
+  },
+
+  resetForms(state) {
+    state.forms = [];
   }
 };
 

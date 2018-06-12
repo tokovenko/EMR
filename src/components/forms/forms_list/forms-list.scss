@@ -1,5 +1,15 @@
 .FormsList {
   &__wrapper {
+  }
 
+  &__toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 0;
+  }
+
+  &__content {
+    margin: 0 -15px;
   }
 }

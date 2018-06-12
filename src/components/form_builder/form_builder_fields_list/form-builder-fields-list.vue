@@ -15,7 +15,7 @@
       @drop.stop="onDrop(field)"
       class="FormBuilderFieldsList__item">
       <btn
-        @click.native="removeFieldFromForm(field.id)"
+        @onclick="removeFieldFromForm(field.id)"
         btn-class="submit close"
         btn-label="x" />
       <component

@@ -4,6 +4,7 @@ export default {
   data: {
     value: '',
     required: false,
+    placeholder: '',
     label: '',
     mask: null,
     validation: {
