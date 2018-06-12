@@ -3,16 +3,15 @@
     <form-builder-blocks-list-block
       v-for="(block, index) in blocks"
       :key="index"
-      :block="block">
-    </form-builder-blocks-list-block>
+      :block="block" />
   </div>
 </template>
 
 <script>
 import { createNamespacedHelpers } from 'vuex';
-import FormBuilderBlocksListBlock from '@/components/forms/form_builder_blocks_list_block/form-builder-blocks-list-block';
+import FormBuilderBlocksListBlock from '@/components/form_builder/form_builder_blocks_list_block/form-builder-blocks-list-block';
 
-const { mapActions, mapGetters, mapMutations } = createNamespacedHelpers('forms');
+const { mapGetters } = createNamespacedHelpers('formBuilder');
 
 export default {
   name: 'FormBuilderBlocksList',
@@ -21,10 +20,6 @@ export default {
   },
   computed: {
     ...mapGetters(['blocks'])
-  },
-  methods: {
-    ...mapActions(['saveForm']),
-    ...mapMutations(['addBlock', 'removeBlock'])
   }
 };
 </script>

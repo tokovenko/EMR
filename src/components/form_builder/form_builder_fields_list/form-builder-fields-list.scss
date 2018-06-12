@@ -1,0 +1,43 @@
+.FormBuilderFieldsList {
+  &__wrapper {
+    margin-top: 20px;
+    &.dragging {
+      .FormBuilderFieldsList__item {
+        &>* {
+          pointer-events: none;
+        }
+      }
+    }
+  }
+  &__item {
+    margin-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #c7c3c3;
+    position: relative;
+    z-index: 1;
+    &:last-child {
+      border-bottom: none;
+    }
+    &.drag-over {
+      border-bottom: 1px solid green;
+      &>* {
+        pointer-events: none;
+      }
+    }
+    .close {
+      position: absolute;
+      right: 0;
+      top: 0;
+      opacity: 0;
+      height: 18px;
+      font-size: 8px;
+      min-width: 18px;
+      padding: 0;
+    }
+    &:hover {
+      .close {
+        opacity: 1;
+      }
+    }
+  }
+}

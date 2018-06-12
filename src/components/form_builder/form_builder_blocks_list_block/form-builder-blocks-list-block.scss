@@ -1,0 +1,12 @@
+.FormBuilderBlocksListBlock {
+  &__wrapper {
+    padding: 10px;
+    cursor: move;
+    border: 1px dashed grey;
+    margin-bottom: 5px;  
+    background: white;
+    &:hover {
+      border-style: solid;
+    }
+  }
+}

@@ -1,11 +1,3 @@
-export const getIndexByParam = (arr, attr, value) => {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i][attr] === value) {
-      return i;
-    }
-  }
-  return -1;
-};
 
 export const scrollDown = (el, duration) => {
   const diff = el.scrollHeight - el.scrollTop;
