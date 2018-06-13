@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'FormFieldInput',
+  name: 'FormBuilderFieldInput',
   props: {
     field: {
       type: Object

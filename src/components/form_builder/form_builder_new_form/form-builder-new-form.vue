@@ -24,7 +24,8 @@
           id="description"
           class="form-field"
           type="text"
-          placeholder="Enter form description" />
+          placeholder="Enter form description">
+        </textarea>
       </div>
       <form-builder-fields-list />
       <form-builder-new-form-drop-area />

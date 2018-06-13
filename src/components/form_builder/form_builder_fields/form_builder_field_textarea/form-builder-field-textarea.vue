@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'FormFieldTextarea',
+  name: 'FormBuilderFieldTextarea',
   props: {
     field: {
       type: Object

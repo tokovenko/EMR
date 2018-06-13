@@ -12,7 +12,7 @@ import { createNamespacedHelpers } from 'vuex';
 const { mapMutations } = createNamespacedHelpers('formBuilder');
 
 export default {
-  name: 'FormFieldRadio',
+  name: 'FormBuilderFieldRadio',
   props: {
     field: {
       type: Object

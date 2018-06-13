@@ -1,33 +1,24 @@
-.FormsListForm {
+.FormDetails {
   &__wrapper {
-    width: 275px;
-    height: 165px;
-    margin: 15px;
     background: #F3F3F3;
     border: 1px solid #FFF;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.19), inset 0 1px 3px 0 rgba(0,0,0,.14);
     border-radius: 3px;
     color: #212121;
-    float: left;
-    padding: 12px;
-    transition: box-shadow .2s ease-in-out;
+    padding: 24px;
     cursor: pointer;
-
-    &:hover {
-      box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
-    }
   }
 
   &__name {
-    font-size: 14px;
+    font-size: 18px;
     letter-spacing: 2.62px;
     text-transform: uppercase;
     text-align: center;
-    margin-bottom: 6px;
+    margin-bottom: 12px;
   }
 
   &__description {
-    font-size: 14px;
+    font-size: 16px;
     letter-spacing: -.31px;
   }
 }

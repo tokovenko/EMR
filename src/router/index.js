@@ -38,13 +38,29 @@ const router = new Router({
         },
         {
           path: 'forms',
-          name: 'forms',
-          component: load('components/views/forms'),
-          meta: {
-            scope: 'authorized',
-            title: 'Forms',
-            appearance: 'slide-top-to-bottom'
-          }
+          component: load('components/views/abstract'),
+          children: [
+            {
+              path: '',
+              name: 'forms',
+              component: load('components/views/forms'),
+              meta: {
+                scope: 'authorized',
+                title: 'Forms',
+                appearance: 'slide-top-to-bottom'
+              }
+            },
+            {
+              path: ':id',
+              name: 'form',
+              component: load('components/views/form'),
+              meta: {
+                scope: 'authorized',
+                title: 'Form',
+                appearance: 'slide-right-to-left'
+              }
+            }
+          ]
         },
         {
           path: 'form-builder',
