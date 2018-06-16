@@ -1,0 +1,14 @@
+.FormBuilderFieldOptionsListOption {
+  &__wrapper {
+    border-left: 1px solid grey;
+    padding-left: 15px;
+    margin-left: 15px;
+    margin-bottom: 5px;
+    &.drag-over {
+      border-bottom: 1px solid green;
+      &>* {
+        pointer-events: none;
+      }
+    }
+  }
+}

@@ -1,6 +1,13 @@
 <template>
   <div class="FormFieldRadio__wrapper">
-    radio
+    <div>{{field.data.label}}</div>
+    <div 
+      v-for="(option, index) in field.data.options"
+      :key="index">
+        <input type="radio" name="">
+        <label>{{option.title}}</label>
+        <hr>
+      </div>
   </div>
 </template>
 

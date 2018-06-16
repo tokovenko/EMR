@@ -1,6 +1,13 @@
 <template>
   <div class="FormFieldSelect__wrapper">
-    select
+    <div>{{field.data.label}}</div>
+    <select>
+      <option
+        v-for="(option, index) in field.data.options"
+        :key="index">
+        {{ option.title }}
+      </option>
+    </select>
   </div>
 </template>
 
