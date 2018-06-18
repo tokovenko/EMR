@@ -10,6 +10,7 @@
         <input
           id="title"
           v-focus
+          v-model="form.name"
           class="form-field"
           type="text"
           placeholder="Enter form name" />
@@ -22,6 +23,7 @@
         </label>
         <textarea
           id="description"
+          v-model="form.description"
           class="form-field"
           type="text"
           placeholder="Enter form description">
@@ -31,6 +33,7 @@
       <form-builder-new-form-drop-area />
       <div class="form-actions">
         <btn
+          @onclick="submit"
           btn-class="submit"
           btn-label="Submit" />
       </div>
@@ -44,6 +47,7 @@ import FormBuilderNewFormDropArea from '@/components/form_builder/form_builder_n
 import { createNamespacedHelpers } from 'vuex';
 
 const { mapGetters, mapMutations } = createNamespacedHelpers('formBuilder');
+const { mapActions: mapFormsActions } = createNamespacedHelpers('forms');
 
 const DRAG_OVER_CLASSNAME = 'drag-over';
 
@@ -69,6 +73,18 @@ export default {
       'setForm',
       'addFieldToForm'
     ]),
+    ...mapFormsActions([
+      'saveForm'
+    ]),
+    initForm() {
+      const form = {
+        id: Date.now(),
+        name: '',
+        description: '',
+        fields: []
+      };
+      this.setForm(form);
+    },
     onDrop() {
       const field = Object.assign({}, this.dragField);
       field.id = Date.now();
@@ -81,18 +97,17 @@ export default {
     },
     onDragleave() {
       this.dragOver = false;
+    },
+    async submit() {
+      await this.saveForm(this.form);
+      this.$router.push('forms');
     }
   },
   beforeMount() {
-    const form = {
-      id: null,
-      name: '',
-      description: '',
-      fields: []
-    };
-    this.setForm(form);
+    this.initForm();
   }
 };
+
 </script>
 
 <style scoped lang="scss">

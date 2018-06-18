@@ -22,7 +22,7 @@ const getters = {
   dragFieldOption: state => state.drag.fieldOption,
   dragOverFieldOption: state => state.drag.overFieldOption,
   form: state => state.form,
-  formFields: state => state.form.fields
+  formFields: state => state.form && state.form.fields
 };
 
 const actions = {
@@ -91,7 +91,6 @@ const mutations = {
       const field = state.form.fields[index];
       const option = {
         id: Date.now(),
-        value: '',
         title: ''
       };
       field.data.options.push(option);

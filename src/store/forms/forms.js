@@ -13,6 +13,9 @@ const actions = {
   async fetchForms({ commit }) {
     const response = await api.fetchForms();
     commit('setForms', response);
+  },
+  async saveForm({ commit }, form) {
+    const response = await api.saveForm(form);
   }
 };
 
@@ -20,7 +23,9 @@ const mutations = {
   setForms(state, forms) {
     state.forms = forms;
   },
-
+  addForm(state, form) {
+    state.forms = [...state.forms, form];
+  },
   resetForms(state) {
     state.forms = [];
   }

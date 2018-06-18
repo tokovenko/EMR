@@ -44,21 +44,22 @@ export default {
     }
   },
   computed: {
-    optionTitle : {
+    optionTitle: {
       get() {
         return this.optionField.title;
       },
       set(value) {
         this.setFieldOptionTitle({
-          fieldIndex: this.fieldIndex, 
-          fieldOptionIndex: this.fieldOptionIndex, 
+          fieldIndex: this.fieldIndex,
+          fieldOptionIndex: this.fieldOptionIndex,
           value
         });
       }
     },
     optionField: {
       get() {
-        return this.$store.state.formBuilder.form.fields[this.fieldIndex].data.options[this.fieldOptionIndex];
+        const field = this.$store.state.formBuilder.form.fields[this.fieldIndex];
+        return field.data.options[this.fieldOptionIndex];
       }
     },
     ...mapGetters([
@@ -76,7 +77,12 @@ export default {
     ]),
     onDrop() {
       const fieldOption = Object.assign({}, this.dragFieldOption);
-      this.addFieldOptionAfterOption({field: this.field, fieldOption, insertAfterOption: this.option});
+      const data = {
+        field: this.field,
+        insertAfterOption: this.option,
+        fieldOption
+      };
+      this.addFieldOptionAfterOption(data);
 
       this.setDragOverFieldOption(null);
     }

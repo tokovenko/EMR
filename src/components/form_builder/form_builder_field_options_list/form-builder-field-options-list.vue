@@ -1,6 +1,6 @@
 <template>
   <div class="FormBuilderFieldOptionsList__wrapper">
-      <form-builder-field-options-list-option 
+      <form-builder-field-options-list-option
         v-for="(option, index) in field.data.options"
         :key="index"
         :fieldIndex="fieldIndex"

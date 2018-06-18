@@ -11,7 +11,7 @@ const getters = {
 
 const actions = {
   async fetchForm({ commit }, id) {
-    const response = await api.fetchForm();
+    const response = await api.fetchForm(id);
     commit('setForm', response);
   }
 };

@@ -1,7 +1,7 @@
 <template>
   <div class="FormFieldCheckbox__wrapper">
     <div>{{field.data.label}}</div>
-    <div 
+    <div
       v-for="(option, index) in field.data.options"
       :key="index">
         <input type="checkbox" name="">

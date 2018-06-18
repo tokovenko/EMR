@@ -36,7 +36,8 @@ export default {
     ...mapGetters(['form'])
   },
   beforeMount() {
-    this.fetchForm();
+    const { id } = this.$route.params;
+    this.fetchForm(id);
   },
   beforeDestroy() {
     this.resetForm();
